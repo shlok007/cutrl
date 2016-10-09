@@ -1,2 +1,0 @@
-module CutsHelper
-end

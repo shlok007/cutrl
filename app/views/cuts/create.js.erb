@@ -1,10 +1,10 @@
 field = document.getElementById("result")
 alert = document.getElementById("alert")
 <% if @cut.shortened_url %>
-  alert.innerHTML = 'Here is the your shortened url! Star it on <a href="http://github.com/shlok007/cuturl">github</a> if you like it :)'
+  alert.innerHTML = 'Here is the your shortened url! Star it on <a href="http://github.com/shlok007/cutrl">github</a> if you like it :)'
   field.style.color = "green"
   field.style.borderColor = "green"
-  field.value = "http://cuturl.heroku.com/<%=@cut.shortened_url%>";
+  field.value = "http://cutrl.heroku.com/<%=@cut.shortened_url%>";
 <% else %>
   alert.innerHTML = ""
   field.style.color = "red"
