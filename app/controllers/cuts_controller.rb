@@ -9,6 +9,17 @@ class CutsController < ApplicationController
   	@cut = Cut.new(cut_params)
   	@cut.save
     respond_to do |format|
+      format.json {
+        if @cut.shortened_url
+          render json: { 
+            status: "OK",
+            shortened_url: "http://cutrl.heroku.com/#{@cut.shortened_url}" }
+        else
+          render json: {
+            status: "Unprocessible Entity",
+            error: "Please enter a valid url" }
+        end
+      }
       format.js
     end
   end

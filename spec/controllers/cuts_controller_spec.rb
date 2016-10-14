@@ -7,5 +7,12 @@ RSpec.describe CutsController, type: :controller do
 			expect(response).to be_success
 			expect(response).to have_http_status(200)
 		end
-	end		
+	end	
+
+	describe "GET :url" do
+		it "redirects to correct url" do
+			get :decode, url: "http://github.com"
+			expect(response).to have_http_status(308)
+		end
+	end
 end 
